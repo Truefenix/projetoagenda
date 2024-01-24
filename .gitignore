@@ -1,0 +1,8 @@
+# Arquivos específicos
+package-lock.json
+
+# Pastas
+node_modules/
+
+# Arquivos de ambiente
+.env
