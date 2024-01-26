@@ -1,5 +1,5 @@
 exports.middlewareGlobal = (req, res, next) => {
-    res.locals.errors = req.flash('erro', console.log('recebido o flash')); // manda para todas as páginas a flash message.
+    res.locals.errors = req.flash('errors', console.log('recebido o flash')); // manda para todas as páginas a flash message.
     next();
 };
   
@@ -15,6 +15,6 @@ exports.checkCsrfError = (err, req, res, next) => {
 };
   
 exports.csfrMiddleware = (req, res, next) => {
-    res.locals.csrfToken = req.csrfToken();
-    next();
+  res.locals.csrfToken = req.csrfToken();
+  next();
 };
