@@ -1,5 +1,5 @@
 exports.middlewareGlobal = (req, res, next) => {
-    res.locals.umaVariavelLocal = 'Este é o valor da variável local.';
+    res.locals.errors = req.flash('erro', console.log('recebido o flash')); // manda para todas as páginas a flash message.
     next();
 };
   

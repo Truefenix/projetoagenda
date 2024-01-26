@@ -54,9 +54,9 @@ app.set('view engine', 'ejs'); // renderiza pelo ejs.
 app.use(csfr());
 
 // middlewares
+app.use(middlewareGlobal);
 app.use(checkCsrfError);
 app.use(csfrMiddleware);
-app.use(middlewareGlobal);
 app.use(routes); // executa rotas.
 
 app.on('pronto', () => { // executa depois do banco dedados

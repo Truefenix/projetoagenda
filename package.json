@@ -23,7 +23,8 @@
     "express-session": "^1.17.3",
     "mongoose": "^8.1.0",
     "regenerator-runtime": "^0.14.1",
-    "style-loader": "^1.0.0"
+    "style-loader": "^1.0.0",
+    "validator": "^13.11.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.23.4",
