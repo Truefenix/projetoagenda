@@ -1,5 +1,7 @@
 exports.middlewareGlobal = (req, res, next) => {
-    res.locals.errors = req.flash('errors', console.log('recebido o flash')); // manda para todas as páginas a flash message.
+    // flassh messages
+    res.locals.errors = req.flash('errors', console.log('recebido o flash error'));
+    res.locals.success = req.flash('success', console.log('recebido o flash success'));
     next();
 };
   
