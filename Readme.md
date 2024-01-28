@@ -44,7 +44,7 @@ Certifique-se de ter o Node.js e o MongoDB instalados em sua máquina.
 
     ```env
     PORT=3000
-    MONGODB_URI=sua_uri_do_mongodb
+    CONNECTIONSTRING=sua_uri_do_mongodb
     SESSION_SECRET=sua_chave_secreta_para_sessao
     ```
 
