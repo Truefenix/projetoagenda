@@ -16,6 +16,24 @@ class Login {
     this.user = null;
   }
 
+  async login() {
+    this.valida();
+    if (this.errors.length > 0) return;
+
+    // Login do usuário
+    this.user = await LoginModel.findOne({ email: this.body.email });
+
+    if(!this.user) {
+      this.errors.push('Usuário não existe');
+      return;
+    }
+    if(!bcryptjs.compareSync(this.body.password, this.user.password)) {
+      this.errors.push('Senha inválida');
+      this.user = null;
+      return;
+    }
+  }
+
   async register() {
     this.valida();
     if (this.errors.length > 0) return; // Verifica se há erros antes de prosseguir
@@ -29,24 +47,14 @@ class Login {
     this.body.password = bcryptjs.hashSync(this.body.password, salt);
 
     // banco de dados
-    try {
       this.user = await LoginModel.create(this.body);
       console.log('Usuário criado com sucesso:', this.user);
-    } catch (error) {
-      if (error.name === 'ValidationError') {
-        console.error('Erro de validação ao criar usuário:', error.message);
-      } else {
-        console.error('Erro ao criar usuário:', error);
-      }
-    }
   }
 
   async userExists() {
     // user -> email existe?
-    const user = await LoginModel.findOne({ email: this.body.email });
-    if(user) {
-      this.errors.push('Email já existe');
-    }
+    this.user = await LoginModel.findOne({ email: this.body.email });
+    if(this.user) {this.errors.push('Email já existe');}
   }
 
   valida() {
