@@ -57,6 +57,11 @@ Certifique-se de ter o Node.js e o MongoDB instalados em sua máquina.
     ```bash
     npm start
     ```
+1. Inicie o webpack:
+
+    ```bash
+    npm run dev
+    ```
 
 2. Abra o navegador e acesse [http://localhost:3000](http://localhost:3000).
 
