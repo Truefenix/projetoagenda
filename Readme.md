@@ -1,4 +1,7 @@
 # Sua Agenda
+<p align="center">
+    <img src="./frontend/assets/img/projetoagenda_Login.png" alt="PNG-LOGIN" width="100%" height="100%">
+</p>
 
 ## Descrição
 Sua Agenda é um pequeno projeto que permite aos usuários criar uma conta, fazer login e gerenciar uma lista simples de contatos com nomes, números de telefone e endereços de e-mail.
