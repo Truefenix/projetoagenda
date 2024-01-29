@@ -17,6 +17,6 @@ route.post('/login/register', loginController.register);
 route.post('/login/login', loginController.login);
 
 // Rota de saida
-route.get('/login/login', loginController.logout);
+route.get('/login/logout', loginController.logout);
 
 module.exports = route;
