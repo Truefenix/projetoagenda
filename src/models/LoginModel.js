@@ -47,8 +47,8 @@ class Login {
     this.body.password = bcryptjs.hashSync(this.body.password, salt);
 
     // banco de dados
-      this.user = await LoginModel.create(this.body);
-      console.log('Usuário criado com sucesso:', this.user);
+    this.user = await LoginModel.create(this.body);
+    console.log('Usuário criado com sucesso:', this.user);
   }
 
   async userExists() {
